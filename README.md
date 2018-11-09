@@ -29,3 +29,15 @@ The /etc/logrotate.d/yang should contain:
     copytruncate
 } 
 ```
+
+## pyang additional modules
+
+Three files must be added in `/usr/local/lib/python3.6/dist-packages/pyang/plugins` (or where PYANG was installed):
+
+- json-tree.py
+- name-revision.py or name.py ?
+- yang-catalog-index.py 
+
+## libyang
+
+Must be installed from git clone https://github.com/CESNET/libyang.git
