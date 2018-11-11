@@ -1,0 +1,12 @@
+$TTL 3600
+@	IN SOA dns113.ovh.net. tech.ovh.net. (2018111000 86400 3600 3600000 300)
+            3600 IN NS     ns113.ovh.net.
+            3600 IN NS     dns113.ovh.net.
+            3600 IN MX 10  creme-brulee.marcuscom.com.
+            3600 IN A      51.68.76.239
+            3600 IN AAAA   2001:41d0:305:1000::c4
+            3600 IN TXT    "1|www.yangcatalog.org"
+new         3600 IN CNAME  yangcatalog.org.
+old         3600 IN A      34.213.81.81
+www         3600 IN CNAME  yangcatalog.org.
+ys          3600 IN CNAME  yangcatalog.org.

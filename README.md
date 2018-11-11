@@ -1,34 +1,38 @@
 # Yang Catalog tool documentation
 
-This repository contains global documentation of the Yang Catalog tool (including configuration file).
+This repository contains global documentation of the Yang Catalog tool (including several configuration files).
 
-## yangcatalog.conf
+## Configuration files
+
+### yangcatalog.conf
 
 This is the main configuration file to be customized and placed in /etc/yangcatalog directory. It contains all directories, credentials (so beware of the read access), URI, ...
 
-## sdo_analysis repository
+### yangcatalog.dns
+
+It is the DNS zone file for yangcatalog.org
+
+### yang_logrotate
+
+This file should be placed into  /etc/logrotate.d/ in order to have a daily rotation (and compression) of all log files.
+
+## Other repositoires
+
+### backend repository
+
+It contains all scripts implementing the REST API to the YangCatalog.
+
+### sdo_analysis repository
 
 It contains the tools to extract the YANG modules from IETF documents (RFC and drafts), from the [https://github.com/YangModels] global YANG modules catalog.
 
-## yang (in logrotate)
+### search repository
 
-The /etc/logrotate.d/yang should contain:
-```
-/var/yang/logs/yang.log {
-    rotate 7
-    daily
-    compress
-    missingok
-    copytruncate
-}
-/var/yang/logs/uwsgi/*.log {
-    rotate 7
-    daily
-    compress
-    missingok
-    copytruncate
-} 
-```
+It contains all Django scripts implementing the YangSearch part of the YangCatalog.
+
+### web_root repository
+
+It contains all static web content of https://yangcatalog.org
 
 ## pyang additional modules
 

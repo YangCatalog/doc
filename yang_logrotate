@@ -1,0 +1,31 @@
+/var/yang/logs/*.log {
+    rotate 7
+    daily
+    compress
+    missingok
+    copytruncate
+}
+
+/var/yang/logs/uwsgi/*.log {
+    rotate 7
+    daily
+    compress
+    missingok
+    copytruncate
+}
+
+/var/yang/logs/jobs/*.log {
+    rotate 7
+    daily
+    compress
+    missingok
+    copytruncate
+}
+
+/var/yang/logs/statistics/yang.log {
+    rotate 7
+    daily
+    compress
+    missingok
+    copytruncate
+}
