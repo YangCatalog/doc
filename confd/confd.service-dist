@@ -1,0 +1,30 @@
+[Unit]
+Description=Tail-F ConfD service
+After=network.target 
+
+[Service]
+Type=forking
+Group=yang-dev
+#EnvironmentFile=-/opt/confd/confdrc
+Environment=CONFD_DIR=/opt/confd
+Environment=PATH=${CONFD_DIR}/bin:/bin:/usr/bin:/sbin:/usr/sbin:${PATH}
+Environment=VAR=/var/yang
+Environment=CDB_DIR=${VAR}/confd/confd-cdb
+Environment=CWD=/home/yang/doc/confd
+WorkingDirectory=/home/yang/doc/confd
+# Probably need to clean all YANG in ExecStartPre
+ExecStartPre=-/usr/bin/mkdir -p ${VAR}/logs/confd ${CDB_DIR}
+ExecStartPre=-/usr/bin/make -f ${CWD}/Makefile.confd all
+ExecStartPre=-/usr/bin/cp ${CWD}/yangcatalog_*_init.xml ${CDB_DIR}/
+ExecStart=/opt/confd/bin/confd  -c ${CWD}/confd.conf --addloadpath ${CONFD_DIR}/etc/confd --addloadpath ${CWD}
+ExecStop=-/opt/confd/bin/confd --stop
+ExecReload=/opt/confd/bin/confd --reload
+KillMode=process
+#Restart=on-failure
+RestartPreventExitStatus=255
+RuntimeDirectory=confd
+RuntimeDirectoryMode=0755
+
+[Install]
+WantedBy=multi-user.target
+Alias=confd.service confd netconf
