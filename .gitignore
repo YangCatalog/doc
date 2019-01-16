@@ -1,0 +1,5 @@
+*.fxs
+confd.conf
+confd.service
+yangcatalog_aaa_init.xml
+*/yangcatalog_aaa_init.xml

@@ -16,6 +16,10 @@ It is the DNS zone file for yangcatalog.org
 
 This file should be placed into  /etc/logrotate.d/ in order to have a daily rotation (and compression) of all log files.
 
+### yangcatalog-tmpfiles.conf
+
+This file should be placed into /etc/tmpdfiles.d/ in order to create the required /run/yang and /var/yang/logs at boot time.
+
 ## Other repositoires
 
 ### backend repository

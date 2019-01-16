@@ -1,0 +1,6 @@
+include $(CONFD_DIR)/src/confd/build/include.mk
+
+#all: ietf-yang-library.fxs ietf-yang-types.fxs ietf-inet-types.fxs yang-catalog.fxs module-metadata.fxs platform-implementation-metadata.fxs $(CDB_DIR) ssh-keydir
+all: yang-catalog.fxs module-metadata.fxs platform-implementation-metadata.fxs
+
+#	cp yangcatalog_*_init.xml $(CDB_DIR)/
