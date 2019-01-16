@@ -39,8 +39,10 @@ It contains all static web content of https://yangcatalog.org
 Three files must be added in `/usr/local/lib/python3.6/dist-packages/pyang/plugins` (or where PYANG was installed):
 
 - json-tree.py
-- name-revision.py or name.py ?
-- yang-catalog-index.py 
+- name-revision.py 
+- yang-catalog-index.py
+
+All those plugins are in the search repository in scripts/pyang_plugins directory.
 
 ## libyang
 
