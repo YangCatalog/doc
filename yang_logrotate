@@ -3,7 +3,8 @@
     daily
     compress
     missingok
-    copytruncate
+    copytruncate 
+    su yang yang-dev
 }
 
 /var/yang/logs/uwsgi/*.log {
@@ -12,6 +13,7 @@
     compress
     missingok
     copytruncate
+    su yang yang-dev
 }
 
 /var/yang/logs/jobs/*.log {
@@ -20,6 +22,7 @@
     compress
     missingok
     copytruncate
+    su yang yang-dev
 }
 
 /var/yang/logs/statistics/yang.log {
@@ -28,4 +31,5 @@
     compress
     missingok
     copytruncate
+    su yang yang-dev
 }
